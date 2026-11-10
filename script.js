@@ -1,4 +1,4 @@
-// Data for all 7 Grade 12 Subjects (Replace '#' with your Google Drive PDF links & MP3 voice note paths)
+// Data for all 7 Grade 12 Subjects (Replace '#' with your PDF links & MP3 voice note paths)
 const subjectData = {
   "Mathematics": {
     audioTopic: "Paper 1 & 2: Calculus, Trigonometry & Euclidean Geometry Tips",
@@ -123,25 +123,18 @@ function deleteDeadline(index) {
   renderDeadlines();
 }
 
-// Reviews & Reactions Wall
-let reviews = JSON.parse(localStorage.getItem("matricReviews")) || [
-  {
-    name: "Naledi K.",
-    role: "Grade 12 Learner",
-    rating: "⭐⭐⭐⭐⭐",
-    text: "Listening to the History and Business Studies voice notes helped me revise on the taxi!"
-  },
-  {
-    name: "Mrs. Dlamini",
-    role: "Parent",
-    rating: "⭐⭐⭐⭐⭐",
-    text: "Having 2025 past papers and memos in one place saved us extra tutoring fees this term."
-  }
-];
+// Reviews & Reactions Wall (Starts completely empty for real community feedback)
+let reviews = JSON.parse(localStorage.getItem("matricReviews")) || [];
 
 function renderReviews() {
   const wall = document.getElementById("reviews-wall");
   wall.innerHTML = "";
+
+  if (reviews.length === 0) {
+    wall.innerHTML = `<p class="subtitle">No reviews yet. Be the first learner, parent, or teacher to share your reaction above!</p>`;
+    return;
+  }
+
   reviews.forEach(rev => {
     const div = document.createElement("div");
     div.className = "review-card";
