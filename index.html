@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatricPrep Hub | Grade 12 Study Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="logo">🎓 MatricPrep Hub</div>
+    <nav class="nav-links">
+      <a href="#subjects">2025 Papers & Audio</a>
+      <a href="#deadlines">Deadline Tracker</a>
+      <a href="#reviews">Reviews & Reactions</a>
+    </nav>
+    <div class="auth-buttons" id="auth-controls">
+      <button class="btn btn-outline" onclick="openModal('login')">Login</button>
+      <button class="btn btn-primary" onclick="openModal('register')">Register</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Free Grade 12 Past Papers, Voice Notes & Exam Tracker</h1>
+    <p>Helping Matric learners stay on top of deadlines and cutting private tutoring costs for families.</p>
+    <div class="hero-actions">
+      <a href="#subjects" class="btn btn-primary">Start Studying</a>
+      <button class="btn btn-whatsapp" onclick="shareOnWhatsApp('MatricPrep Hub - Free Grade 12 2025 Past Papers & Audio Notes')">
+        📲 Share on WhatsApp
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1: 7 Subjects Hub (2025 Papers + Audio Voice Notes) -->
+  <main class="container">
+    <section id="subjects" class="card">
+      <h2>📚 Grade 12 Subject Hub (2025 Papers & Voice Notes)</h2>
+      <p class="subtitle">Select a subject to download 2025 question papers, memos, or listen to audio summaries.</p>
+
+      <!-- 7 Subject Tabs -->
+      <div class="subject-tabs" id="subject-tabs">
+        <button class="tab active" onclick="selectSubject('Mathematics', this)">Mathematics</button>
+        <button class="tab" onclick="selectSubject('Mathematical Literacy', this)">Math Literacy</button>
+        <button class="tab" onclick="selectSubject('English FAL', this)">English FAL</button>
+        <button class="tab" onclick="selectSubject('IsiXhosa HL', this)">IsiXhosa HL</button>
+        <button class="tab" onclick="selectSubject('Geography', this)">Geography</button>
+        <button class="tab" onclick="selectSubject('Business Studies', this)">Business Studies</button>
+        <button class="tab" onclick="selectSubject('History', this)">History</button>
+      </div>
+
+      <!-- Dynamic Subject Display Area -->
+      <div class="subject-content" id="subject-display">
+        <h3 id="current-subject-title">Mathematics (Grade 12 - 2025)</h3>
+        
+        <!-- Audio Voice Note Player -->
+        <div class="audio-box">
+          <div class="audio-info">
+            <strong>🎧 Audio Revision Voice Note:</strong>
+            <span id="audio-topic">Exam Paper 1 & 2 Key Formulas & Study Tips</span>
+          </div>
+          <audio id="voice-player" controls>
+            <source src="" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <small class="hint">Tip: Replace the audio source with your recorded MP3/M4A voice note file.</small>
+        </div>
+
+        <!-- Question Paper & Memo Links -->
+        <div class="resource-grid">
+          <div class="resource-item">
+            <h4>📄 2025 Question Paper</h4>
+            <p id="qp-desc">Official 2025 NSC / Preparatory Question Paper PDF.</p>
+            <a id="qp-link" href="#" target="_blank" class="btn btn-primary">Open Question Paper</a>
+          </div>
+          <div class="resource-item">
+            <h4>✅ 2025 Memorandum</h4>
+            <p id="memo-desc">Official Marking Guideline to check your answers.</p>
+            <a id="memo-link" href="#" target="_blank" class="btn btn-outline">Open Memorandum</a>
+          </div>
+        </div>
+
+        <button class="btn btn-whatsapp mt-1" onclick="shareSubject()">
+          📲 Share This Subject With Classmates
+        </button>
+      </div>
+    </section>
+
+    <!-- Section 2: Exam & Assignment Deadline Tracker -->
+    <section id="deadlines" class="card">
+      <h2>⏰ Exam & SBA Assignment Deadline Tracker</h2>
+      <p class="subtitle">Track upcoming tests and assignments so you never miss a submission date.</p>
+
+      <form class="deadline-form" onsubmit="addDeadline(event)">
+        <input type="text" id="task-name" placeholder="e.g., History Research Assignment" required />
+        <select id="task-subject">
+          <option value="Mathematics">Mathematics</option>
+          <option value="Mathematical Literacy">Mathematical Literacy</option>
+          <option value="English FAL">English FAL</option>
+          <option value="IsiXhosa HL">IsiXhosa HL</option>
+          <option value="Geography">Geography</option>
+          <option value="Business Studies">Business Studies</option>
+          <option value="History">History</option>
+        </select>
+        <input type="date" id="task-date" required />
+        <button type="submit" class="btn btn-primary">+ Add Deadline</button>
+      </form>
+
+      <ul class="deadline-list" id="deadline-list"></ul>
+    </section>
+
+    <!-- Section 3: Community Review & Reaction Page -->
+    <section id="reviews" class="card">
+      <h2>⭐ Learner, Parent & Teacher Reviews</h2>
+      <p class="subtitle">Share how MatricPrep Hub is helping your studies or saving tutoring costs.</p>
+
+      <form class="review-form" onsubmit="submitReview(event)">
+        <div class="form-row">
+          <input type="text" id="reviewer-name" placeholder="Your Name (e.g., Sipho M. - Grade 12)" required />
+          <select id="reviewer-role">
+            <option value="Grade 12 Learner">Grade 12 Learner</option>
+            <option value="Parent">Parent</option>
+            <option value="Teacher">Teacher</option>
+          </select>
+          <select id="review-rating">
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (5/5)</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (4/5)</option>
+            <option value="⭐⭐⭐">⭐⭐⭐ (3/5)</option>
+          </select>
+        </div>
+        <textarea id="review-text" rows="3" placeholder="Write your reaction or feedback here..." required></textarea>
+        <button type="submit" class="btn btn-primary">Post Review</button>
+      </form>
+
+      <div class="reviews-wall" id="reviews-wall"></div>
+    </section>
+  </main>
+
+  <!-- Registration / Login Modal -->
+  <div class="modal-backdrop" id="auth-modal">
+    <div class="modal">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title">Register Account</h3>
+      <form onsubmit="handleAuth(event)">
+        <div id="name-group">
+          <label>Full Name</label>
+          <input type="text" id="auth-name" placeholder="Enter your name" />
+        </div>
+        <label>Email Address</label>
+        <input type="email" id="auth-email" placeholder="learner@example.com" required />
+        <label>Password</label>
+        <input type="password" id="auth-password" placeholder="Create a password" required />
+        <button type="submit" class="btn btn-primary full-width" id="modal-submit-btn">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>MatricPrep Hub &copy; 2026 | Built for Grade 12 Community Success</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
