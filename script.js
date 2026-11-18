@@ -1,120 +1,192 @@
-// Data for all 7 Grade 12 Subjects (Replace '#' with your PDF links & MP3 voice note paths)
-const subjectData = {
-  "Mathematics": {
-    audioTopic: "Paper 1 & 2: Calculus, Trigonometry & Euclidean Geometry Tips",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
-  },
-  "Mathematical Literacy": {
-    audioTopic: "Finance, Maps & Plans, and Data Handling Revision Summary",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
-  },
-  "English FAL": {
-    audioTopic: "Paper 1 Comprehension & Paper 3 Essay Writing Voice Guide",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
-  },
-  "IsiXhosa HL": {
-    audioTopic: "Isikhokelo soVavanyo lweUncwadi neZibongo (Literature & Poetry Audio)",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
-  },
-  "Geography": {
-    audioTopic: "Climate & Weather, Geomorphology, and Mapwork Calculations",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
+const subjectLibrary = {
+  "Accounting": {
+    audio: "audio/accounting.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/accounting-p1.pdf", memo: "pdfs/accounting-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/accounting-p2.pdf", memo: "pdfs/accounting-p2-memo.pdf" }
+    ]
   },
   "Business Studies": {
-    audioTopic: "Business Environments, Ventures & Essay Structure Voice Note",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
+    audio: "audio/business.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/business-p1.pdf", memo: "pdfs/business-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/business-p2.pdf", memo: "pdfs/business-p2-memo.pdf" }
+    ]
+  },
+  "Economics": {
+    audio: "audio/economics.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/economics-p1.pdf", memo: "pdfs/economics-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/economics-p2.pdf", memo: "pdfs/economics-p2-memo.pdf" }
+    ]
+  },
+  "English FAL": {
+    audio: "audio/english.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/english-p1.pdf", memo: "pdfs/english-p1-memo.pdf.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/english-p2.pdf", memo: "pdfs/english-p2-memo.pdf.pdf" },
+      { title: "Paper 3 (Nov 2025)", paper: "pdfs/english-p3.pdf", memo: "pdfs/english-p3-memo.pdf" }
+    ]
+  },
+  "Geography": {
+    audio: "audio/geography.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/geography-p1.pdf", memo: "pdfs/geography-p1-memo.pdf.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/geography-p2.pdf", memo: "pdfs/geography-p2-memo.pdf" }
+    ]
   },
   "History": {
-    audioTopic: "Cold War, Civil Society Protests & Source-Based Question Tips",
-    audioSrc: "",
-    qpLink: "#",
-    memoLink: "#"
+    audio: "audio/history.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/history-p1.pdf", memo: "pdfs/history-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/history-p2.pdf", memo: "pdfs/history-p2-memo.pdf.pdf" }
+    ]
+  },
+  "IsiXhosa HL": {
+    audio: "audio/isixhosa.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/isixhosa-p1.pdf", memo: "pdfs/isixhosa-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/isixhosa-p2.pdf", memo: "pdfs/isixhosa-p2-memo.pdf" },
+      { title: "Paper 3 (Nov 2025)", paper: "pdfs/isixhosa-p3.pdf", memo: "pdfs/isixhosa-p3-memo.pdf" }
+    ]
+  },
+  "Setswana HL": {
+    audio: "audio/setswana.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/setswana-p1.pdf", memo: "pdfs/setswana-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/setswana-p2.pdf", memo: "pdfs/setswana-p2-memo.pdf" },
+      { title: "Paper 3 (Nov 2025)", paper: "pdfs/setswana-p3.pdf", memo: "pdfs/setswana-p3-memo.pdf" }
+    ]
+  },
+  "Mathematics": {
+    audio: "audio/mathematics.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/maths-p1.pdf", memo: "pdfs/maths-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/maths-p2.pdf", memo: "pdfs/maths-p2-memo.pdf" }
+    ]
+  },
+  "Mathematical Literacy": {
+    audio: "audio/mathslit.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/mathslit-p1.pdf", memo: "pdfs/mathslit-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/mathslit-p2.pdf", memo: "pdfs/mathslit-p2-memo.pdf" }
+    ]
+  },
+  "Life Sciences": {
+    audio: "audio/lifescience.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/Life Sciences P1 Nov 2025 Eng.pdf", memo: "pdfs/Life Sciences P1 Nov 2025 MG Eng.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/Life Sciences P2 Nov 2025 Eng.pdf", memo: "pdfs/Life Sciences P2 Nov 2025 MG Eng.pdf" }
+    ]
+  },
+  "Physical Sciences": {
+    audio: "audio/physicalscience.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/physics-p1.pdf", memo: "pdfs/physics-p1-memo.pdf" },
+      { title: "Paper 2 (Nov 2025)", paper: "pdfs/physics-p2.pdf", memo: "pdfs/physics-p2-memo.pdf" }
+    ]
+  },
+  "Life Orientation": {
+    audio: "audio/lo.mp4.mp4",
+    papers: [
+      { title: "Paper 1 / CAT (Nov 2025)", paper: "pdfs/lo-p1.pdf", memo: "pdfs/lo-p1-memo.pdf" }
+    ]
+  },
+  "Tourism": {
+    audio: "audio/tourism.mp4.mp4",
+    papers: [
+      { title: "Paper 1 (Nov 2025)", paper: "pdfs/tourism-p1.pdf", memo: "pdfs/tourism-p1-memo.pdf" }
+    ]
   }
 };
 
-let currentSubject = "Mathematics";
-let authMode = "register";
+function selectSubject(subjectName, clickedTab) {
+  document.querySelectorAll(".tab").forEach(function(tab) {
+    tab.classList.remove("active");
+  });
+  if (clickedTab) {
+    clickedTab.classList.add("active");
+  }
 
-// Switch Subject Tab
-function selectSubject(subject, btnElement) {
-  currentSubject = subject;
-  document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-  btnElement.classList.add("active");
+  document.getElementById("currentSubjectTitle").textContent = subjectName + " (Grade 12 - 2025)";
+  document.getElementById("audioSubjectLabel").textContent = subjectName;
 
-  const info = subjectData[subject];
-  document.getElementById("current-subject-title").textContent = `${subject} (Grade 12 - 2025)`;
-  document.getElementById("audio-topic").textContent = info.audioTopic;
-  document.getElementById("voice-player").src = info.audioSrc;
-  document.getElementById("qp-link").href = info.qpLink;
-  document.getElementById("memo-link").href = info.memoLink;
+  const data = subjectLibrary[subjectName];
+  if (!data) return;
+
+  const audioPlayer = document.getElementById("subjectAudio");
+  audioPlayer.src = encodeURI(data.audio);
+  audioPlayer.load();
+
+  const resourceGrid = document.getElementById("resourceGrid");
+  resourceGrid.innerHTML = "";
+
+  data.papers.forEach(function(item) {
+    const card = document.createElement("div");
+    card.className = "resource-item";
+
+    const paperButton = item.paper
+      ? '<a href="' + encodeURI(item.paper) + '" target="_blank" class="btn btn-primary">📄 Question Paper</a>'
+      : '<span class="badge">Question Paper Pending</span>';
+
+    const memoButton = item.memo
+      ? '<a href="' + encodeURI(item.memo) + '" target="_blank" class="btn btn-outline">✅ Open Memo</a>'
+      : '<span class="badge">Memo Pending</span>';
+
+    card.innerHTML =
+      '<h4>' + item.title + '</h4>' +
+      '<div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">' +
+      paperButton +
+      memoButton +
+      '</div>';
+
+    resourceGrid.appendChild(card);
+  });
 }
 
-// WhatsApp Share Functions
-function shareOnWhatsApp(message) {
-  const url = window.location.href;
-  const fullText = encodeURIComponent(`${message} - Access it free here: ${url}`);
-  window.open(`https://whatsapp.com{fullText}`, "_blank");
-}
-
-function shareSubject() {
-  shareOnWhatsApp(`Check out the 2025 Grade 12 ${currentSubject} Past Paper, Memo & Voice Note on MatricPrep Hub`);
-}
-
-// Deadline Tracker Logic
 let deadlines = JSON.parse(localStorage.getItem("matricDeadlines")) || [
-  { name: "Mathematics SBA Investigation", subject: "Mathematics", date: "2026-11-20" },
-  { name: "Business Studies Presentation", subject: "Business Studies", date: "2026-11-25" }
+  { name: "Accounting Paper 1 Revision", subject: "Accounting", date: "2026-11-20" },
+  { name: "Business Studies Paper 2 Revision", subject: "Business Studies", date: "2026-11-24" }
 ];
 
 function renderDeadlines() {
-  const list = document.getElementById("deadline-list");
+  const list = document.getElementById("deadlineList");
   list.innerHTML = "";
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
 
-  deadlines.forEach((item, index) => {
-    const due = new Date(item.date);
-    const diffDays = Math.ceil((due - today) / (1000 * 60 * 60 * 24));
-    const statusText = diffDays > 0 ? `${diffDays} days left` : diffDays === 0 ? "Due Today!" : "Past Due";
+  deadlines.forEach(function(item, index) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const target = new Date(item.date);
+    const diffDays = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+
+    let statusText = diffDays + " days left";
+    if (diffDays === 0) statusText = "Due Today!";
+    if (diffDays < 0) statusText = "Completed / Passed";
 
     const li = document.createElement("li");
     li.className = "deadline-item";
-    li.innerHTML = `
-      <div>
-        <strong>${item.name}</strong> <span class="badge">${item.subject}</span><br/>
-        <small>Due Date: ${item.date}</small>
-      </div>
-      <div>
-        <span class="days-left">${statusText}</span>
-        <button class="btn btn-outline" style="margin-left:8px; padding:2px 8px;" onclick="deleteDeadline(${index})">✕</button>
-      </div>
-    `;
+    li.innerHTML =
+      '<div>' +
+      '<strong>' + item.subject + ':</strong> ' + item.name + '<br>' +
+      '<small>Due Date: ' + item.date + ' • <span class="days-left">' + statusText + '</span></small>' +
+      '</div>' +
+      '<button class="btn btn-outline" onclick="deleteDeadline(' + index + ')">Remove</button>';
+
     list.appendChild(li);
   });
 }
 
-function addDeadline(e) {
-  e.preventDefault();
-  const name = document.getElementById("task-name").value;
-  const subject = document.getElementById("task-subject").value;
-  const date = document.getElementById("task-date").value;
+function addDeadline(event) {
+  event.preventDefault();
+  const name = document.getElementById("taskName").value.trim();
+  const subject = document.getElementById("taskSubject").value;
+  const date = document.getElementById("taskDate").value;
+  if (!name || !date) return;
 
-  deadlines.push({ name, subject, date });
+  deadlines.push({ name: name, subject: subject, date: date });
   localStorage.setItem("matricDeadlines", JSON.stringify(deadlines));
   renderDeadlines();
-  e.target.reset();
+  event.target.reset();
 }
 
 function deleteDeadline(index) {
@@ -123,87 +195,89 @@ function deleteDeadline(index) {
   renderDeadlines();
 }
 
-// Reviews & Reactions Wall (Starts completely empty for real community feedback)
 let reviews = JSON.parse(localStorage.getItem("matricReviews")) || [];
 
 function renderReviews() {
-  const wall = document.getElementById("reviews-wall");
+  const wall = document.getElementById("reviewsWall");
   wall.innerHTML = "";
 
   if (reviews.length === 0) {
-    wall.innerHTML = `<p class="subtitle">No reviews yet. Be the first learner, parent, or teacher to share your reaction above!</p>`;
+    wall.innerHTML = '<p style="color: var(--muted); font-style: italic;">No reviews posted yet. Be the first learner, parent, or teacher to share feedback!</p>';
     return;
   }
 
-  reviews.forEach(rev => {
+  reviews.forEach(function(rev) {
+    const stars = "★".repeat(rev.rating) + "☆".repeat(5 - rev.rating);
     const div = document.createElement("div");
     div.className = "review-card";
-    div.innerHTML = `
-      <div class="review-header">
-        <strong>${rev.name} (${rev.role})</strong>
-        <span>${rev.rating}</span>
-      </div>
-      <p>${rev.text}</p>
-    `;
+    div.innerHTML =
+      '<div class="review-header">' +
+      '<strong>' + rev.name + ' (' + rev.role + ')</strong>' +
+      '<span>' + stars + '</span>' +
+      '</div>' +
+      '<p>' + rev.comment + '</p>';
+
     wall.appendChild(div);
   });
 }
 
-function submitReview(e) {
-  e.preventDefault();
-  const name = document.getElementById("reviewer-name").value;
-  const role = document.getElementById("reviewer-role").value;
-  const rating = document.getElementById("review-rating").value;
-  const text = document.getElementById("review-text").value;
+function submitReview(event) {
+  event.preventDefault();
+  const name = document.getElementById("reviewerName").value.trim();
+  const role = document.getElementById("reviewerRole").value;
+  const rating = parseInt(document.getElementById("reviewerRating").value, 10);
+  const comment = document.getElementById("reviewerComment").value.trim();
+  if (!name || !comment) return;
 
-  reviews.unshift({ name, role, rating, text });
+  reviews.unshift({ name: name, role: role, rating: rating, comment: comment });
   localStorage.setItem("matricReviews", JSON.stringify(reviews));
   renderReviews();
-  e.target.reset();
+  event.target.reset();
 }
 
-// Registration & Login Modal
 function openModal(mode) {
-  authMode = mode;
-  document.getElementById("auth-modal").style.display = "flex";
-  document.getElementById("modal-title").textContent = mode === "register" ? "Register Learner Account" : "Learner Login";
-  document.getElementById("name-group").style.display = mode === "register" ? "block" : "none";
-  document.getElementById("modal-submit-btn").textContent = mode === "register" ? "Create Account" : "Login";
+  document.getElementById("modalTitle").textContent = mode === "register" ? "Learner Registration" : "Learner Login";
+  document.getElementById("authModal").style.display = "flex";
 }
 
 function closeModal() {
-  document.getElementById("auth-modal").style.display = "none";
+  document.getElementById("authModal").style.display = "none";
 }
 
-function handleAuth(e) {
-  e.preventDefault();
-  const email = document.getElementById("auth-email").value;
-  const name = document.getElementById("auth-name").value || email.split("@")[0];
+function handleAuth(event) {
+  event.preventDefault();
+  const userName = document.getElementById("userNameInput").value.trim();
+  if (!userName) return;
 
-  localStorage.setItem("matricUser", name);
+  localStorage.setItem("matricUser", userName);
   updateAuthUI();
   closeModal();
 }
 
 function updateAuthUI() {
-  const user = localStorage.getItem("matricUser");
-  if (user) {
-    document.getElementById("auth-controls").innerHTML = `
-      <span>👋 Hi, <strong>${user}</strong></span>
-      <button class="btn btn-outline" onclick="logoutUser()">Logout</button>
-    `;
+  const savedUser = localStorage.getItem("matricUser");
+  if (savedUser) {
+    document.getElementById("authButtons").innerHTML =
+      '<span>👋 Welcome, <strong>' + savedUser + '</strong></span> ' +
+      '<button class="btn btn-outline" onclick="logoutUser()">Logout</button>';
   }
 }
 
 function logoutUser() {
   localStorage.removeItem("matricUser");
-  document.getElementById("auth-controls").innerHTML = `
-    <button class="btn btn-outline" onclick="openModal('login')">Login</button>
-    <button class="btn btn-primary" onclick="openModal('register')">Register</button>
-  `;
+  location.reload();
+}
+function shareOnWhatsApp() {
+  const text = encodeURIComponent(
+    "Check out MatricPrep Hub! Free Grade 12 past exam papers, memos, and audio revision summaries for T.M. Letlhake Secondary School learners: " +
+      window.location.href
+  );
+  window.open("https://wa.me" + text, "_blank");
 }
 
-// Initialize Page
-renderDeadlines();
-renderReviews();
-updateAuthUI();
+document.addEventListener("DOMContentLoaded", function() {
+  selectSubject("Accounting", document.querySelector(".tab.active"));
+  renderDeadlines();
+  renderReviews();
+  updateAuthUI();
+});
